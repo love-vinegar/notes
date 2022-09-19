@@ -9,34 +9,55 @@
 
 \maketitle
 \section{Přednáška 1}
-Primitivni funkce 
-	Definice 
-		Nechť funkce f je definovaná na intervalu (a, b), kde -\infnt <= a < b <= \infnt . Funkci F splňnující podmínku 
-		F'(x) = f(x)
+Neorientovaný graf je uspořádaná dvojice (V,E), kde 
+	V je neprázdná konečná množina vrcholů
+	E je množina hran
+Hrana je dvojprvková podmnožiná V, značíme {u, v}
 
-Neurcitý integral 
-	Necht F je primitivní funcí k funkci f na intervalu (a, b) Pak G je primitivní fuknicí k funkci f na intervalu (a, b) právě tehdz kdyz existuje konstanta C z R takova ze 
-	G(x) = F(x) + C pro každe x z (a, b)
-	definice 
-		necht k funkci f existuje primitivni funkce na intervalu a, b Množinu všch primitivních funkcí k funkci f na (a, b) nazáváme neurčitým integralem funcke f na intervalu (a, b) značíme jej (znak integralu) f
-	defivace a intefrace jsou inverzní.
-	//vložit tabulku integrací a derivací
+nechť e = {u, v}  je hrana v grafu G. Pak řekneme, že 
+	vrcholy u a v jsou koncové vrcholy hrany e
+	u je sousedem v v G
+	u i v jsou inicidentní s hranou e
+Sled délky k v gragu G je sekvence v\_0, e\_1, v\_1 .. e\_kv\_k taková  že ei = {vi-1, vi} a ei \in E(G) pro všechna i
+cesta v grafu G je sled ve kterem se neopakuji vrcholy
 
-Vlastnosti neurciteho integralu
-	nechť F, G je primitivni fukkci f, g na intervalu (a, b) a necht \alpha z R pak 
-		F+G je primigivni fukci k f+g na (a, b)
-		\alpha F je primitivní funkcí k funkc9 \alpha f na (a, b)
+BFS
+	Algoritmus BFS(G, S) se vždz zastaví.
 	
-Existence primitivní funkce
-	nechť funkce f je spojitá na intervalu (a, b). pak funkce f má na tomto intervalu primitivní funkci.
+	věta o správnosti algoritmu BFS
+\begin{itemize}
+	\item Po skončení BFS(G, s) jsou uzavřené právě ty vrcholy,
+	do kterých vede cesta ze startu s a ostatní vrcholy
+zůstanou nenalezené.
 
-Integrace per partes 
-	nechť funkce f je diferencovatelná v intervalu (a, b) a G je primitivní funkce k funcki g na intervalu (a, b) a konečně nechť existuje primitivní funkce k funkci f'G potom existuje primitivní funkce k fuknci fg a plati
-$$\integrace fg = fG - \integrace f'G$$
-	davat pozor na to jakou funkci dam za f a jakou za g
+	\item Pro všechny uzavřené vrcholy v platí D(v) = d(s, v) =
+	délka nejkratší cesty ze startu s do vrcholu v.
 
-Substituce v neurčítém integrálu
+	\item Pro všechny uzavřené vrcholy v platí P(v) = w, kde w
+	je předchůdce v na nějaké nejkratší cestě ze startu s do
+vrcholu v.
+\end{itemize}
 
-\section{Přednáška 2}
+úplný graf K\_{n}
+nechť n \geq 1
+Úplný graf na n vrcholech K\_n je grav (V, (v2)) kde \abs{V} = n.
+neboli kazdy s kazdym
+
+uplny bipartitni graf
+dve zkupiny mezi kterýma kazdy s kazdym ale ve skupine nikdo s nikým
+
+cesta P\_m
+nechť m \geq 0 
+cesta délky m (s m hranami) P\_m je graf 
+({0, ... , m}, {{i, i + 1} | i \in {0, ... , m − 1}})
+
+
+kružnice 
+nechť n \geq 3
+kružnice délky n (s n vrcholy) C\_n je graf kterej je proste do kruhu
+
+princip sudosti 
+Pro každý graf G = (V, E) platí
+$$\sum_{v \in V}deg\_{G}(v) = 2\abs{E} $$
 
 \end{document}
